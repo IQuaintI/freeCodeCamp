@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Heading and other Admin -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colors of the Map</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+      }
+
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      #navbar header {
+        font-size: 1.2em;
+        margin-bottom: 1em;
+      }
+
+      #navbar .nav-link {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin: 0.5em 0;
+      }
+
+      #navbar .nav-link:hover {
+        text-decoration: underline;
+      }
+
+      #main-doc {
+        margin-left: 220px;
+        padding: 20px;
+        box-sizing: border-box;
+        width: calc(100% - 220px);
+      }
+
+      .main-section {
+        margin-bottom: 40px;
+      }
+
+      .main-section header {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .cairo {
+        width: 300px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .cairo:hover {
+        transform: scale(1.1);
+      }
+
+      /* Media query for responsive design */
+      @media (max-width: 600px) {
+        #navbar {
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+        #main-doc {
+          margin-left: 0;
+          width: 100%;
+        }
+        .nav-link {
+          padding: 10px 0;
+        }
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <header>Documentation Topics</header>
+      <a href="#Introduction" class="nav-link">Introduction</a>
+      <a href="#Getting_Started" class="nav-link">Getting Started</a>
+      <a href="#Red" class="nav-link">Red</a>
+      <a href="#Brown" class="nav-link">Brown</a>
+      <a href="#Red-Brown" class="nav-link">Red-Brown</a>
+      <a href="#Green" class="nav-link">Green</a>
+      <a href="#Blue" class="nav-link">Blue</a>
+      <a href="#Black" class="nav-link">Black</a>
+      <a href="#Other" class="nav-link">Other</a>
+      <a href="#Map" class="nav-link">Map</a>
+      <a href="#Sources" class="nav-link">Sources</a>
+    </nav>
+
+    <!-- Body -->
+    <main id="main-doc">
+      <!-- Introduction -->
+      <section id="Introduction" class="main-section">
+        <header>Introduction</header>
+        <p>
+          Learning land navigation seems like a strange thing to do in a world
+          where we have pinpoint accurate <code>GPS</code> only a few taps away,
+          but there is still something to be said for the old-school ways of
+          doing things. You will not always have signal, or battery life, or
+          even electronics on you, but you will always have your wits about you.
+        </p>
+        <p>
+          A <code>map</code> is a graphic representation of the Earth's surface
+          drawn to scale from an overhead view. If that sounded complicated do
+          not worry. This technical document will go over some of the basics of
+          land navigation.
+        </p>
+        <p>
+          “God created war so that Americans would learn geography.” ― Mark
+          Twain
+        </p>
+      </section>
+
+      <!-- Getting Started -->
+      <section id="Getting_Started" class="main-section">
+        <header>Getting Started</header>
+        <p>
+          The only things you need to be successful at land navigation are a
+          <code>map</code>, a <code>compass</code>, a writing utensil, and some
+          luck.
+        </p>
+        <p>
+          If you want any more information on land navigation Army Field
+          Manual/Training Circular (FM/TC) 3-25.26 covers everything you will
+          ever need to know regarding the matter.
+        </p>
+        <p>
+          “By failing to prepare, you are preparing to fail.” ― Benjamin
+          Franklin
+        </p>
+        <ul>
+          <li>Map</li>
+          <li>Compass</li>
+          <li>Writing utensil</li>
+          <li>Luck</li>
+          <li>Knowledge of the terrain</li>
+        </ul>
+      </section>
+
+      <!-- Red -->
+      <section id="Red" class="main-section">
+        <header>Red</header>
+        <p>
+          Ever wonder what all those colors on a <code>map</code> mean? Well
+          have no fear as the following will hopefully answer every question you
+          had on the matter.
+        </p>
+        <p>
+          Red represents cultural features such as populated areas, roads, and
+          boundaries. However, this color is only found on older maps as it has
+          been superseded by the red-brown color.
+        </p>
+        <p>
+          “The spirit of arrogance most definitely makes you shine. It paints a
+          bright red target on your own forehead.” ― Criss Jami
+        </p>
+      </section>
+
+      <!-- Brown -->
+      <section id="Brown" class="main-section">
+        <header>Brown</header>
+        <p>
+          Brown is next up on our color wheel and it represents all relief
+          features (this is just a fancy way of saying terrain), differences in
+          elevation through contour lines, cultivated land and is readable when
+          using a red-light.
+        </p>
+        <p>This color is also used more so on older maps.</p>
+        <p>
+          “The color brown, I realized, is anything but nondescript. It comes in
+          as many hues as there are colors of earth, with is commonly presumed
+          infinite.” ― Barbara Kingsolver
+        </p>
+        <ul>
+          <li>Contour lines</li>
+          <li>Cultivated land</li>
+          <li>Readable under red light</li>
+          <li>Terrain features</li>
+          <li>Elevation differences</li>
+        </ul>
+      </section>
+
+      <!-- Red-Brown -->
+      <section id="Red-Brown" class="main-section">
+        <header>Red-Brown</header>
+        <p>
+          A mixture of two colors that exist to identify cultural features
+          (human-made features), relief features, non-surveyed elevations, and
+          surveyed elevations.
+        </p>
+        <p>Can be seen on red-light friendly maps</p>
+        <p>
+          “Do I not destroy my enemies when I make them my friends?” ― Abraham
+          Lincoln
+        </p>
+      </section>
+
+      <!-- Green -->
+      <section id="Green" class="main-section">
+        <header>Green</header>
+        <p>
+          Makes note of vegetation that carries military significance such as
+          woods, orchards, and vineyards.
+        </p>
+        <p>Maps tend to have a lot of this.</p>
+        <p>
+          “If a tree falls in the forest and nobody is there to hear it, doesn't
+          it just lie there and rot?” ― Chuck Palahniuk
+        </p>
+      </section>
+
+      <!-- Blue -->
+      <section id="Blue" class="main-section">
+        <header>Blue</header>
+        <p>
+          This color represents hydrography (measuring the physical features of
+          water) or other water features such as lakes, swamps, rivers, and
+          drainage.
+        </p>
+        <p>
+          Note that while maps can show how big a body of water is, it does not
+          accurately portray depth.
+        </p>
+        <p>
+          “Human nature is like water. It takes the shape of its container.” ―
+          Wallace Stevens
+        </p>
+        <ul>
+          <li>Lakes</li>
+          <li>Swamps</li>
+          <li>Rivers</li>
+          <li>Drainage areas</li>
+          <li>Hydrography</li>
+        </ul>
+      </section>
+
+      <!-- Black -->
+      <section id="Black" class="main-section">
+        <header>Black</header>
+        <p>
+          Identifies man-made features such as buildings, roads, surveyed spots
+          and all labels.
+        </p>
+        <p>
+          This color is similar to red-brown but cannot be seen with a
+          red-light.
+        </p>
+        <p>
+          “Look at how a single candle can both defy and define the darkness.” ―
+          Anne Frank
+        </p>
+      </section>
+
+      <!-- Other -->
+      <section id="Other" class="main-section">
+        <header>Other</header>
+        <p>Other colors may be used to show special information.</p>
+        <p>The meaning of these colors will be noted in the legend.</p>
+        <p>
+          “Caminante, no hay puentes, se hace puentes al andar. (Voyager, there
+          are no bridges, one builds them as one walks.)” ― Gloria Anzaldúa
+        </p>
+      </section>
+
+      <!-- Map -->
+      <section id="Map" class="main-section">
+        <header>Map</header>
+        <p>An example that should better aid in understanding the above.</p>
+        <p>A map of Cairo, Egypt in 1974.</p>
+        <p>
+          “Arise, awake, stop not till the goal is reached.” ― Swami Vivekananda
+        </p>
+        <img class="cairo" src="images/CairoMap.jpg" alt="Cairo Map" />
+      </section>
+
+      <!-- Sources -->
+      <section id="Sources" class="main-section">
+        <header>Sources</header>
+        <p>Sources</p>
+        <p>
+          <a
+            href="https://www.boisestate.edu/sps-militaryscience/current-cadet-corner/colors/"
+            target="_blank"
+            >https://www.boisestate.edu/sps-militaryscience/current-cadet-corner/colors/</a
+          >
+          <br /><br />
+          <a
+            href="https://armyboardquestions.army/army-training-publications-atpstraining-circulars-tcs/tc-3-25-26-land-navigation-and-map-reading/"
+            target="_blank"
+            >https://armyboardquestions.army/army-training-publications-atpstraining-circulars-tcs/tc-3-25-26-land-navigation-and-map-reading/</a
+          >
+          <br /><br />
+          <a href="https://maps.lib.utexas.edu/maps/ams/africa/" target="_blank"
+            >https://maps.lib.utexas.edu/maps/ams/africa/</a
+          >
+        </p>
+        <p>
+          "If you're any good at all, you know you can be better.” ― Lindsay
+          Buckingham
+        </p>
+      </section>
+    </main>
+
+    <!-- Modal for larger image -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage" />
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("imageModal");
+
+      // Get the image and insert it inside the modal
+      var img = document.querySelector(".cairo");
+      var modalImg = document.getElementById("modalImage");
+
+      img.onclick = function () {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      };
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
