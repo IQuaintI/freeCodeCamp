@@ -73,6 +73,26 @@ const _ = {
       }
       const droppedArray = array.slice(n);
       return droppedArray;
+    },
+
+    // Implement the dropWhile() method which takes two arguments: an array and a predicate function.
+    dropWhile(array, predicate) {
+      const dropNumber = array.findIndex((element, index) => !predicate(element, index, array));
+      const droppedArray = this.drop(array, dropNumber);
+      return droppedArray;
+    },
+
+    // Implement the chunk() method which takes two arguments: an array and a size.
+    chunk(array, size) {
+      if (size === undefined) {
+        size = 1;
+      }
+      const arrayChunks = [];
+      for (let i = 0; i < array.length; i += size) {
+        const arrayChunk = array.slice(i, i + size);
+        arrayChunks.push(arrayChunk);
+      }
+      return arrayChunks;
     }
   };
     
@@ -94,6 +114,8 @@ console.log(_.has({house: "Some value"}, "house" )); // true
 console.log(_.invert({key: "value"})); // { value: 'key' }
 console.log(_.findKey(heroes, villains)); // Joker
 console.log(_.drop([1, 2, 3], 2)); // [3]
+console.log(_.dropWhile([1, 2, 3, 4, 5], n => n < 3)); // [3, 4, 5]\
+console.log(_.chunk([1, 2, 3, 4, 5], 2)); // [ [ 1, 2 ], [ 3, 4 ], [ 5 ] ]
 
 
 // Do not write or modify code below this line.
